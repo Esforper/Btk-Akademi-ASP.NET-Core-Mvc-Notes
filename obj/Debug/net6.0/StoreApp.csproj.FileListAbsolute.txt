@@ -24,3 +24,5 @@ C:\Kodlar\backend çalışma\mvc\Store\StoreApp\obj\Debug\net6.0\refint\StoreApp
 C:\Kodlar\backend çalışma\mvc\Store\StoreApp\obj\Debug\net6.0\StoreApp.pdb
 C:\Kodlar\backend çalışma\mvc\Store\StoreApp\obj\Debug\net6.0\StoreApp.genruntimeconfig.cache
 C:\Kodlar\backend çalışma\mvc\Store\StoreApp\obj\Debug\net6.0\ref\StoreApp.dll
+C:\Kodlar\backend çalışma\mvc\Store\StoreApp\obj\Debug\net6.0\StoreApp.RazorAssemblyInfo.cache
+C:\Kodlar\backend çalışma\mvc\Store\StoreApp\obj\Debug\net6.0\StoreApp.RazorAssemblyInfo.cs
