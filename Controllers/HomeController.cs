@@ -5,9 +5,9 @@ namespace StoreApp.Cotrollers
 {
     public class HomeController : Controller
     {
-        public String Index()
+        public IActionResult Index()
         {
-            return "Hello Store App";
+            return View();
         }
     }
     
