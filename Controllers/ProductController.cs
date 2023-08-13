@@ -1,18 +1,43 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StoreApp.Models;
 
 namespace StoreApp.Cotrollers
 {
     public class ProductController : Controller
     {
+
+
+        //--- DI paterni    --- servis kaydı varsa servis kaydını newliyor
+            private readonly RepositoryContext _context;    //RepositoryContext e ihtiyaç olduğunda servis devreye girecek
+            //Program.cs de yazdığımız bir servis, Bağlantı dizesini otomatik olarak oluşturacak, bunu newleyecek ve bize
+            //kullanabileceğimiz bi context ifadesi vermiş olacak
+
+            public ProductController(RepositoryContext context)
+            {
+                _context = context;
+            }
+            //---
+
+
         public IEnumerable<Product> Index() //endpointe product dediğimizde bize bir ürün getirecek
         {
-            return new List<Product>()  
-            {   
-                new Product(){ProductId=1,ProductName="Computer",Price=5}
+            
+
+        //var context = new RepositoryContext(); şeklinde yazamıyoruz çünkü RepositoryContextda default bir construct yok
+                // var context = new RepositoryContext(     //bu kısım üst kısmı yazmadan önceydi, uzun hal gibi düşün
+                // new DbContextOptionsBuilder<RepositoryContext>().UseSqlite("Data Source = C:\\Kodlar\\backend çalışma\\mvc\\ProductDb.db").Options );
+            //options : Prop
+            //normalde bizden bir options istiyor ama biz başta builder verdik , sonra bu builder classından
+            //devam ettik
+
+            return _context.Products;   //böylelikle Productlara erişim sağlamış olucaz
+            // return new List<Product>()     //List tanımı IEnumerable interfacesini kabul ettiği için ikisini bağlayabildik
+            // {   
+            //     new Product(){ProductId=1,ProductName="Computer",Price=5}
 
 
-            };
+            // };
         }
 
 

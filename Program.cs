@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews(); //servis kaydı yapıldı
 builder.Services.AddDbContext<RepositoryContext>(Options =>
 {
-    Options.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"));
+    Options.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"));      //bu kayıt sayesinde ProductControllerda erişim yaptık
+    //repositoryContext in newlenmesini sağlıyoruz, ihtiyacı olan bağlantı dizesini appsettings den alıp vermiş oluyor
     // sqlconnection = appsettings.json dosyasındaki şey
     //Btk Akademi asp.net core mvc 4.6 . video
 });
