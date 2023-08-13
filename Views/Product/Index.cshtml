@@ -23,9 +23,9 @@
         </thead>
         <tbody>
             @foreach (StoreApp.Models.Product prd in Model)
-            {
+            {   
                 <tr>
-                    <td>@prd.ProductName</td>
+                    <td><a href="\Product\Get\@prd.ProductId">@prd.ProductName</a></td>
                     <td>@prd.Price</td>
                 </tr>
             }
