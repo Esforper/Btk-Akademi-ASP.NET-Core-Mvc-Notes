@@ -1,5 +1,23 @@
-@model StoreApp.Models.Product 
+@* @{
+    Layout = "_layout";
+} *@
+
+@* 
+eğer layoutun boş olmasını istiyorsak layoutu boş olarak tanımlayabiliriz.
+Layout = null; şeklinde *@
+
+
+@*  @model StoreApp.Models.Product artık kullanmaya gerek yok _ViewImports dosyası sayesinde  *@
+@model Product
 
 <h3 class="display-4">@Model.ProductName</h3>
 <p class="display-6">@Model.Price</p>
 <a href="/Product">All Products</a>
+
+@section Header
+{
+    <div>
+        Only for Get Header 
+    </div>
+
+}

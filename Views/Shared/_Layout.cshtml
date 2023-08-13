@@ -1,0 +1,30 @@
+@*  cshtml , razorpage sayılıyor galiba *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        Store App : Header 
+        @RenderSection("Header",false) 
+        @* normal şartlarda burad bir şey olmayacak , bu htmle render edilmeyecek ; istenirse , header a bir şey
+        eklemek gerektiğinde böyle bir alan tanımlanabilir*@
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        Footer 
+        @RenderSection("Footer",false)
+
+    </footer>
+    @await RenderSectionAsync("Scripts",required:false)       <!-- RenderSection("Footer",false); ile benzer kullanılır-->
+    @*  Bu kod, "Scripts" bölümünü eğer mevcutsa render etmeye çalışır.
+    Eğer "Scripts" bölümü mevcut değilse, kod çalışmaya devam eder.
+    Bu genellikle sayfanın belirli betikleri veya kod parçalarını içermesi gereken
+    bir bölümün render edilmesi amacıyla kullanılır. 
+    required derken parametrenin adını belirtmiş oluyoruz*@
+</body>
+</html>
