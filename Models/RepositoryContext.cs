@@ -13,6 +13,7 @@ namespace StoreApp.Models
         {
 
         }
+        
         //overide dedi sonra ctrl + space ile OnModelCreating i seçti
         protected override void OnModelCreating(ModelBuilder modelBuilder)  //protected, sadece kalıtım ile alınabilen bir özellik için kullanılıyor
         {
