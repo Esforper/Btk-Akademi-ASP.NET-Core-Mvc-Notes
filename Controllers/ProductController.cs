@@ -7,8 +7,8 @@ namespace StoreApp.Cotrollers
     public class ProductController : Controller
     {
 
-
-        //--- DI paterni    --- servis kaydı varsa servis kaydını newliyor
+        // * Dependency Injection
+        //--- Dependency Injection paterni    --- servis kaydı varsa servis kaydını newliyor
             private readonly RepositoryContext _context;    //RepositoryContext e ihtiyaç olduğunda servis devreye girecek
             //Program.cs de yazdığımız bir servis, Bağlantı dizesini otomatik olarak oluşturacak, bunu newleyecek ve bize
             //kullanabileceğimiz bi context ifadesi vermiş olacak
@@ -20,9 +20,8 @@ namespace StoreApp.Cotrollers
             //---
 
 
-        public IEnumerable<Product> Index() //endpointe product dediğimizde bize bir ürün getirecek
-        {
-            
+        //public IEnumerable<Product> Index() //endpointe product dediğimizde bize bir ürün getirecek
+        //{ 
 
         //var context = new RepositoryContext(); şeklinde yazamıyoruz çünkü RepositoryContextda default bir construct yok
                 // var context = new RepositoryContext(     //bu kısım üst kısmı yazmadan önceydi, uzun hal gibi düşün
@@ -31,16 +30,24 @@ namespace StoreApp.Cotrollers
             //normalde bizden bir options istiyor ama biz başta builder verdik , sonra bu builder classından
             //devam ettik
 
-            return _context.Products;   //böylelikle Productlara erişim sağlamış olucaz
+          //  return _context.Products;   //böylelikle Productlara erişim sağlamış olucaz
             // return new List<Product>()     //List tanımı IEnumerable interfacesini kabul ettiği için ikisini bağlayabildik
             // {   
             //     new Product(){ProductId=1,ProductName="Computer",Price=5}
 
 
             // };
+        //   }
+
+        public IActionResult Index()
+        {
+            //Product DbSet şeklinde tanımlı duruyor. 
+            //List of Product göndermesi sağlanıyor
+            var model = _context.Products.ToList();
+            return View(model);
+
+
         }
-
-
 
 
 
