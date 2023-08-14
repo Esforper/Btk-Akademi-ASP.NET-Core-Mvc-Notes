@@ -16,6 +16,12 @@ builder.Services.AddDbContext<RepositoryContext>(Options =>
 // ne zaman RepositoryContext gerekirse bir bağlantı oluşacak
 
 var app = builder.Build();
+
+app.UseStaticFiles();   //uygulamanın statik dosyalar kullanabileceğini belirtiyor.
+//bootstrap , jquery , font-awsome gibi kütüphaneleri indirmemize de yarıyor
+//bunları indirirken libman dan yararlanarak indiriyoruz
+
+
 app.UseRouting(); //uygulamanın viewse , controllera ihtiyacının yanı sıra bir routinge ihtiyacı var
 app.UseHttpsRedirection();  //Redirectionlar da işletilebilir (ekleyebiliriz) ?
 app.MapControllerRoute("default","{controller=Home}/{action=Index}/{id?}"); //tanım yaptık

@@ -1,1 +1,19 @@
 dotnet ef database update
+
+wwwroot, içinde statik dosyaları içeren bir klasör , eğer klasörde yoksa o klasörün eklenmesi gerekir
+konfigüre için , uygulamanın statik dosyalar barındıracağını belirtmek için program.cs içine bir kod yazmamız gerekiyor
+
+dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+libman yüklemek için gereken dotnet kodu
+
+libman init -p cdnjs
+// ?  herhangi bir sağlayıcı belirtilmediğinde kullanılan yapı
+//bir json dosyası oluşturuyor
+
+//cdnjs üzerinden bootstrapı kurarken bir kütüphane kurulumu şeklinde süreç ilerleyecel
+
+libman -h //libman komutlarına dair yardım
+libman install -h 
+libman install bootstrap -d wwwroot/lib/bootstrap
+libman install font-awesome -d wwwroot/lib/awesome
+libman install jquery -d wwwroot/lib/jquery
