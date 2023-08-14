@@ -1,10 +1,16 @@
 @model Product
 
-<div>
-    <h2>@Model.ProductName</h2>
-    <p>@Model.Price</p>
-    <a class="btn btn-primary"  asp-action="Get" asp-route-id="@Model.ProductId">
-        <i class="fa-solid fa-arrow-right"></i>
-        Get Details</a>
-    <hr/>
+<div class="col-sm-12 col-md-6 col-lg-4 my-3 " > 
+<!-- md, 12 ye tamamlamaya çalışır mesela md 4 ise 3 tane div sıralanır. 4 olunca 3 tane sıralanır 
+col-sm-12 : ekran küçük olduğunda 12 ayarını kullan (12 ye tamamlamaya çalıştığı için sadece 1 tane gösterir-->
+
+    <div class="card" style="width: 18rem;">
+        <img src="/images/default.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Model.ProductName</h5>
+            <p class="card-text">@Model.Price</p>
+            <a asp-controller="Product" asp-action="get" asp-route-id="@Model.ProductId" class="btn btn-primary">
+                <i class="fa-solid fa-arrow-right"></i> Get Detais</a>
+        </div>
+    </div>
 </div>

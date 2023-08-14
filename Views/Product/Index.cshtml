@@ -1,21 +1,24 @@
 @* @{
-    Layout = "_Layout";
+Layout = "_Layout";
 }
 html kısımlarını kaldırdık (layout entegresi için) *@
 
-@*  @model List<StoreApp.Models.Product> // sadece product yazarsak tanımıyor, böyle yazmaya artık gerek yok *@
-    @model List<Product>
+@* @model List<StoreApp.Models.Product> // sadece product yazarsak tanımıyor, böyle yazmaya artık gerek yok *@
+@model List<Product>
 
 @section Footer
-{
+    {
     <div>Only for Index footer</div>
     @* layoutda tanımlanan footer isimli ve duruma göre tanımlanabilen kısmı kullanılması *@
 }
 
-
-            @* @foreach (StoreApp.Models.Product prd in Model) *@
-             @foreach (Product prd in Model)
-            {   
-                <partial name="_ProductCard" model="@prd" />
-            }
-        
+<div class="row my-3">
+@* my-3 : margin y = 3 birim *@
+@* @foreach (StoreApp.Models.Product prd in Model) *@
+@foreach (Product prd in Model)
+{
+     
+        <partial name="_ProductCard" model="@prd" />
+   
+}
+ </div>
