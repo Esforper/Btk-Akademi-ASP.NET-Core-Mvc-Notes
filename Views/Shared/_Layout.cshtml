@@ -9,6 +9,12 @@
 <body>
     <header>
         Store App : Header 
+        <partial name="_Navbar" />
+
+        @* partial bir tag yardımıyla çağırılıyor,
+        ? layoutu parçalara bölüp birleştirmeye yarıyor gibi mesela navbarı başka yerde derliyoruz *@
+
+        
         @RenderSection("Header",false) 
         @* normal şartlarda burad bir şey olmayacak , bu htmle render edilmeyecek ; istenirse , header a bir şey
         eklemek gerektiğinde böyle bir alan tanımlanabilir*@
@@ -28,3 +34,5 @@
     required derken parametrenin adını belirtmiş oluyoruz*@
 </body>
 </html>
+
+@* eğer 2 controllerin etki edeceği bir sayfa varsa o shared klasörü altında eklenmesi daha doğru olur *@

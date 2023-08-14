@@ -12,24 +12,10 @@ html kısımlarını kaldırdık (layout entegresi için) *@
     @* layoutda tanımlanan footer isimli ve duruma göre tanımlanabilen kısmı kullanılması *@
 }
 
-<div class="container">
-  <h2 class="display-4">Products</h2> <hr>
-    <table class="table table-striped"> 
-        <thead>
-            <tr>
-                <th scope="col">Product Name</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-        <tbody>
+
             @* @foreach (StoreApp.Models.Product prd in Model) *@
              @foreach (Product prd in Model)
             {   
-                <tr>
-                    <td><a href="\Product\Get\@prd.ProductId">@prd.ProductName</a></td>
-                    <td>@prd.Price</td>
-                </tr>
+                <partial name="_ProductCard" model="@prd" />
             }
-        </tbody>
-    </table>
- </div>
+        
