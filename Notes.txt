@@ -115,3 +115,5 @@ select * from Products;
 
 ile database i kontrol ettik. 
 
+
+
