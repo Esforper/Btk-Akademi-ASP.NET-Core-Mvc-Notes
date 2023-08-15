@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;    //normalde sadece bu bir de Repositories in kalması gerekiyordu.
 using Microsoft.Extensions.Options;
 using Repositories;
+using Repositories.Contracts;
+
 
 var builder = WebApplication.CreateBuilder(args);
 //builder ile bir web uygulaması inşa edilecek
@@ -14,6 +16,10 @@ builder.Services.AddDbContext<RepositoryContext>(Options =>
     //Btk Akademi asp.net core mvc 4.6 . video
 });
 // ne zaman RepositoryContext gerekirse bir bağlantı oluşacak
+
+builder.Services.AddScoped<IRepositoryManager,RepositoryManager>();
+builder.Services.AddScoped<IProductRepository,ProductRepository>();
+//IRepositoryManager arabirimi ile karşılaşırsa RepositoryManager classını getirecek
 
 var app = builder.Build();
 

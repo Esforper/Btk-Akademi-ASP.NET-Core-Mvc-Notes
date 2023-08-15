@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Entities.Models;
 using Repositories;
+using Repositories.Contracts;
 
 namespace StoreApp.Cotrollers
 {
@@ -10,13 +11,14 @@ namespace StoreApp.Cotrollers
 
         // * Dependency Injection
         //--- Dependency Injection paterni    --- servis kaydı varsa servis kaydını newliyor
-            private readonly RepositoryContext _context;    //RepositoryContext e ihtiyaç olduğunda servis devreye girecek
+           // private readonly RepositoryContext _context;    //RepositoryContext e ihtiyaç olduğunda servis devreye girecek
             //Program.cs de yazdığımız bir servis, Bağlantı dizesini otomatik olarak oluşturacak, bunu newleyecek ve bize
             //kullanabileceğimiz bi context ifadesi vermiş olacak
 
-            public ProductController(RepositoryContext context)
+            private readonly IRepositoryManager _manager;
+            public ProductController(IRepositoryManager manager)
             {
-                _context = context;
+                _manager = manager;
             }
             //---
 
@@ -44,7 +46,7 @@ namespace StoreApp.Cotrollers
         {
             //Product DbSet şeklinde tanımlı duruyor. 
             //List of Product göndermesi sağlanıyor
-            var model = _context.Products.ToList();
+            var model = _manager.Product.GetAllProducts(false);    //false , değişiklikleri izlesin mi diye
             return View(model);
 
 
@@ -52,12 +54,13 @@ namespace StoreApp.Cotrollers
 
         public IActionResult Get(int Id)    //Id ye bağlı tek bir tane Product
         {
-            Product product = _context.Products.First(p => p.ProductId.Equals(Id));    //boş bir product yaptık
+          //  Product product = _context.Products.First(p => p.ProductId.Equals(Id));    //boş bir product yaptık
             //_contextdeki product ifadesi , 
             //product p ile temsil ediliyor 
             //producttaki ProductId değeri parametreden gelen Id değerine eşit olan bir ürün yakalarsa o ilk ürünü döndürecek
             // sorgu tasarımı.
-            return View(product); //product nesnesini bir view içinde göstermeye çalışacaz
+          //  return View(product); //product nesnesini bir view içinde göstermeye çalışacaz
+          throw new NotImplementedException();
         }
 
 

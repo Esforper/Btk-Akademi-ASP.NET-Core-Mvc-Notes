@@ -115,5 +115,7 @@ select * from Products;
 
 ile database i kontrol ettik. 
 
+IRepositoryBase isimde bir dosya yaptık
+
 
 

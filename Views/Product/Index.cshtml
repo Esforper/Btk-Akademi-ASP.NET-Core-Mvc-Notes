@@ -4,7 +4,7 @@ Layout = "_Layout";
 html kısımlarını kaldırdık (layout entegresi için) *@
 
 @* @model List<StoreApp.Models.Product> // sadece product yazarsak tanımıyor, böyle yazmaya artık gerek yok *@
-@model List<Product>
+@model IQueryable<Product>
 
 @section Footer
     {
