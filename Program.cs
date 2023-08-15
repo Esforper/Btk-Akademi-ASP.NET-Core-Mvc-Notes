@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;    //normalde sadece bu bir de Repositories in kalması gerekiyordu.
 using Microsoft.Extensions.Options;
-using StoreApp.Models;
+using Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder ile bir web uygulaması inşa edilecek
 builder.Services.AddControllersWithViews(); //servis kaydı yapıldı
 builder.Services.AddDbContext<RepositoryContext>(Options =>
 {
-    Options.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"));      //bu kayıt sayesinde ProductControllerda erişim yaptık
+    Options.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"), b => b.MigrationsAssembly("StoreApp") );      //bu kayıt sayesinde ProductControllerda erişim yaptık
     //repositoryContext in newlenmesini sağlıyoruz, ihtiyacı olan bağlantı dizesini appsettings den alıp vermiş oluyor
     // sqlconnection = appsettings.json dosyasındaki şey
     //Btk Akademi asp.net core mvc 4.6 . video

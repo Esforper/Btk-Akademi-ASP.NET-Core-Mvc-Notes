@@ -57,3 +57,5 @@ C:\Kodlar\backend çalışma\mvc\Store\StoreApp\bin\Debug\net6.0\libman.json
 C:\Kodlar\backend çalışma\mvc\Store\StoreApp\bin\Debug\net6.0\StoreApp.staticwebassets.runtime.json
 C:\Kodlar\backend çalışma\mvc\Store\StoreApp\bin\Debug\net6.0\Entities.dll
 C:\Kodlar\backend çalışma\mvc\Store\StoreApp\bin\Debug\net6.0\Entities.pdb
+C:\Kodlar\backend çalışma\mvc\Store\StoreApp\bin\Debug\net6.0\Repositories.dll
+C:\Kodlar\backend çalışma\mvc\Store\StoreApp\bin\Debug\net6.0\Repositories.pdb

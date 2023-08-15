@@ -49,3 +49,69 @@ PS C:\Kodlar\backend çalışma\mvc\Store> dotnet build (yine dotnet watch komut
 
 dotnet watch derken StoreApp e geçiş yapmamız gerekiyor
 
+Repository için StoreApp altında da tanımlayabilirz ama başka projelerde de kullanıcaksak ayrı bir proje olarak tanımlamak daha iyi
+birbiriyle bağlantılı projeler kurulacağı vakit için daha iyi olur 
+
+PS C:\Kodlar\backend çalışma\mvc> dotnet new classlib -f net6.0 -o .\Store\Repositories 
+komudunu kullandık
+PS C:\Kodlar\backend çalışma\mvc> dotnet sln .\Store\ add .\Store\Repositories\
+komudu ile Repositories projesini çözüme ekledik
+
+başta genel alt klasöre geldik , sln dedikten sonra çözümü belirttik sonra add diyip ilgili
+projenin pathini tanımlamış olduk.
+
+bu Repositories projesini RepositoryContext klasörü için ekledik 
+PS C:\Kodlar\backend çalışma\mvc> dotnet add .\Store\StoreApp\ reference .\Store\Repositories\       
+komudu ile referans ekledik
+
+PS C:\Kodlar\backend çalışma\mvc> dotnet add .\Store\Repositories\ package Microsoft.EntityFrameworkCore --version 6.0.0
+.\Store\Repositories\ : proje ismi
+package : ekleme yapacağımız şey (paket veya referans)
+dotnet add .\Store\Repositories\ package Microsoft.EntityFrameworkCore.Sqlite --version 6.0.0
+
+PS C:\Kodlar\backend çalışma\mvc> dotnet list .\Store\Repositories\ package
+ilgili projedeki paketlerin listesini veriyor.
+
+PS C:\Kodlar\backend çalışma\mvc> dotnet remove .\Store\StoreApp\ package Microsoft.EntityFrameworkCore 
+ilgili projeden ilgili paketi kaldırdı
+dotnet remove .\Store\StoreApp\ package Microsoft.EntityFrameworkCore.Sqlite
+
+not: Microsoft.EntityFrameworkCore.Design paketini okuyamıyordu , o nedenle bir daha ekledim
+dotnet add .\Store\StoreApp\ package Microsoft.EntityFrameworkCore.Design 
+
+RepositoryContext i models klasöründen silip Repositories projesine aktardık sonra da
+using entitiyframeworkcore; ifadesini ekledik
+not: bu noktada normalde hata çıkmıyordu ama ben ne olur ne olmaz ekledim
+
+dotnet add .\Repositories\ reference .\Entities\
+normalde bir hata almıyordum ama ne olur ne olmaz bu ikisini referans ettim 
+bu sayadece Repositories içindeki RepositoryContext de,
+using Entities.Models; ifadesini kullanabiliyoruz
+
+ProductController dosyasına using Repositories; ekledim, StoreApp.Models; i kaldırdım.
+Migrations u direkt kaldırdık
+(daha sonra başka bir Migrations alınacak)
+
+Program.cs de de aynı işlem yapıldı
+_ViewImports dosyasında sadece StoreApp.Models silinde , Repositories eklenmedi (yorum satırı olarak ekledim)
+sonuç olarak dotnet build dediğimde çalıştı.
+
+dotnet ef üzerinden Migrations işlemi yürütülüyor.
+ dotnet ef database drop komudunu kullandık.
+ilgili veritabanını tamamen siliyor
+dotnet add package Microsoft.EntityFrameworkCore --version 7.0.5 ekledim , bir metod bulunamıyor diye
+Method not found: 'System.Collections.Generic.IList`1<Microsoft.EntityFrameworkCore.Metadata.Conventions.IModelFinalizingConvention>
+ Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet.get_ModelFinalizingConventions()'.
+
+bu bir işe yaramadı, ben de 6.0.0 sürümlerini indirdim o vakit çalıştı
+dotnet ef migrations add startPoint
+dotnet ef database update
+
+ile database ler halloldu
+
+sqlite3 .\ProductDb.db
+.mode box
+select * from Products;
+
+ile database i kontrol ettik. 
+
