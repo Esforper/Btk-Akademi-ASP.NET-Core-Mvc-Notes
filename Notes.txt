@@ -17,3 +17,35 @@ libman install -h
 libman install bootstrap -d wwwroot/lib/bootstrap
 libman install font-awesome -d wwwroot/lib/awesome
 libman install jquery -d wwwroot/lib/jquery
+
+dotnet new list 
+dotnet komutu ile yeni kurulabilecek proje şablonlarını gösterir
+
+varlıklar projesi oluşturacaz (entities)
+classlib proje şablonu olarak kullanılacak
+yeni projeyi store içine koyacağımız için kök klasör olarak mvc de olarak bu komutu yazıcaz
+ dotnet new classlib -f net6.0 -o .\Store\Entities
+
+dotnet sln .\Store.sln list //komut ile solusion hangi projelerle bağlantılı ona bakabiliyoruz
+PS C:\Kodlar\backend çalışma\mvc\Store> dotnet sln .\Store.sln add .\Entities\
+entities projesini çözüme ekledi
+
+PS C:\Kodlar\backend çalışma\mvc\Store> dotnet add .\StoreApp\ reference .\Entities\
+iki proje arası referans yapıyor
+bu referans StoreApp.csproj dosyası içerisine eklendi
+<ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup> şeklinde
+
+bu referans sonrasında , Product klasörünü taşıdığımız için çoğu sayfadaki referansları tekrar düzenlememiz gerekiyor
+yani
+using Entities.Models; 
+kodunu sıkıntı yapan dosyalara eklememiz lazım
+
+viewler için _ViewImports dosyasına ekleyebiliriz
+
+projeyi build yaparken dotnet build komutunu kullanıcaz
+PS C:\Kodlar\backend çalışma\mvc\Store> dotnet build (yine dotnet watch komutunu kullanıyoruz)
+
+dotnet watch derken StoreApp e geçiş yapmamız gerekiyor
+

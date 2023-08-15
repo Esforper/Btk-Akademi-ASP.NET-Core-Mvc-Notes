@@ -548,6 +548,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
       }
     }
   },
@@ -1208,10 +1218,16 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.0"
@@ -1224,11 +1240,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\StoreApp\\StoreApp.csproj",
+      "projectUniqueName": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\StoreApp\\StoreApp.csproj",
       "projectName": "StoreApp",
-      "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\StoreApp\\StoreApp.csproj",
+      "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\StoreApp\\StoreApp.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\StoreApp\\obj\\",
+      "outputPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\StoreApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1250,7 +1266,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
