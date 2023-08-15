@@ -52,7 +52,7 @@ namespace StoreApp.Cotrollers
 
         }
 
-        public IActionResult Get(int Id)    //Id ye bağlı tek bir tane Product
+        public IActionResult Get(int id)    //Id ye bağlı tek bir tane Product
         {
           //  Product product = _context.Products.First(p => p.ProductId.Equals(Id));    //boş bir product yaptık
             //_contextdeki product ifadesi , 
@@ -60,7 +60,8 @@ namespace StoreApp.Cotrollers
             //producttaki ProductId değeri parametreden gelen Id değerine eşit olan bir ürün yakalarsa o ilk ürünü döndürecek
             // sorgu tasarımı.
           //  return View(product); //product nesnesini bir view içinde göstermeye çalışacaz
-          throw new NotImplementedException();
+          var model = _manager.Product.GetOneProduct(id ,false);
+          return View(model);
         }
 
 
