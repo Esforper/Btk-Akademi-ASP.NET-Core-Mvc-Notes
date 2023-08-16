@@ -573,6 +573,20 @@
         "runtime": {
           "bin/placeholder/Repositories.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -1243,6 +1257,11 @@
       "type": "project",
       "path": "../Repositories/Repositories.csproj",
       "msbuildProject": "../Repositories/Repositories.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1250,7 +1269,8 @@
       "Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0",
-      "Repositories >= 1.0.0"
+      "Repositories >= 1.0.0",
+      "Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1287,11 +1307,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj": {
-              "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj"
+            "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj"
             },
-            "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj": {
-              "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj"
+            "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj"
+            },
+            "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj": {
+              "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj"
             }
           }
         }

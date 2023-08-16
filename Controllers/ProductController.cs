@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Entities.Models;
 using Repositories;
 using Repositories.Contracts;
+using Services.Contracts;
 
 namespace StoreApp.Cotrollers
 {
@@ -15,8 +16,9 @@ namespace StoreApp.Cotrollers
             //Program.cs de yazdığımız bir servis, Bağlantı dizesini otomatik olarak oluşturacak, bunu newleyecek ve bize
             //kullanabileceğimiz bi context ifadesi vermiş olacak
 
-            private readonly IRepositoryManager _manager;
-            public ProductController(IRepositoryManager manager)
+            //private readonly IRepositoryManager _manager;
+            private readonly IServiceManager _manager;
+            public ProductController(IServiceManager manager) //IRepositoryManager , IServiceManager e dönüştürdük
             {
                 _manager = manager;
             }
@@ -46,13 +48,16 @@ namespace StoreApp.Cotrollers
         {
             //Product DbSet şeklinde tanımlı duruyor. 
             //List of Product göndermesi sağlanıyor
-            var model = _manager.Product.GetAllProducts(false);    //false , değişiklikleri izlesin mi diye
+           // var model = _manager.Product.GetAllProducts(false);    //false , değişiklikleri izlesin mi diye
+            var model = _manager.ProductService.GetAllProducts(false);  //7.4 den sonra service odaklı yaptık
             return View(model);
 
 
         }
 
-        public IActionResult Get(int id)    //Id ye bağlı tek bir tane Product
+       // public IActionResult Get(int id)    //Id ye bağlı tek bir tane Product
+        public IActionResult Get([FromRoute(Name ="id")]int id) //7.4 den sonra service odaklı yaparak oldu
+        //temiz tanım yapmak amaçlı böyle yazdık
         {
           //  Product product = _context.Products.First(p => p.ProductId.Equals(Id));    //boş bir product yaptık
             //_contextdeki product ifadesi , 
@@ -60,7 +65,9 @@ namespace StoreApp.Cotrollers
             //producttaki ProductId değeri parametreden gelen Id değerine eşit olan bir ürün yakalarsa o ilk ürünü döndürecek
             // sorgu tasarımı.
           //  return View(product); //product nesnesini bir view içinde göstermeye çalışacaz
-          var model = _manager.Product.GetOneProduct(id ,false);
+          //var model = _manager.Product.GetOneProduct(id ,false);
+          var model = _manager.ProductService.GetOneProduct(id,false);  //7.4 den sonra repositorymanagerden servicemanager odaklı
+          //olması için Productu ProductService olarak değiştirdim.
           return View(model);
         }
 

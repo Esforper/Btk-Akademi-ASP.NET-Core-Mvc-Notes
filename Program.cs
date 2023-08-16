@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;    //normalde sadece bu bir de Repositories
 using Microsoft.Extensions.Options;
 using Repositories;
 using Repositories.Contracts;
-
+using Services;
+using Services.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder ile bir web uygulaması inşa edilecek
@@ -23,6 +24,13 @@ builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
 //ICategoryRepository ifadesi için CategoryRepository yi tanımlamış olduk
 
 //IRepositoryManager arabirimi ile karşılaşırsa RepositoryManager classını getirecek
+
+builder.Services.AddScoped<IServiceManager,ServiceManager>();
+builder.Services.AddScoped<IProductService ,ProductManager>();
+builder.Services.AddScoped<ICategoryService,CategoryManager>();
+//Configuration işlemi
+
+
 
 var app = builder.Build();
 

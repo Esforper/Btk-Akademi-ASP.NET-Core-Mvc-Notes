@@ -132,3 +132,36 @@ böylelikle sqlite da yeni bir tablo oluşmuş olacak
 PS C:\Kodlar\backend çalışma\mvc> sqlite3 ProductDb.db
 sqlite> .tables
 
+7.2------
+yeni bir classlib ekliyoruz
+PS C:\Kodlar\backend çalışma\mvc\Store> dotnet new classlib -f net6.0 -o Services
+
+ilgili projeyi çözüm ile ilişkilendirmek lazım 
+PS C:\Kodlar\backend çalışma\mvc\Store> dotnet sln .\Store.sln add .\Services\ 
+Not: mvc/Store uzantılı yerdeyiz dikkat
+eğer mvc klasöründe olsaydık ona göre sln ve services klasörünü Store/Services gibi bir şekilde belirtmek gerekirdi
+
+Services projesine referanslar eklememiz gerekiyor. diğer projelerle ilişkili olucak 
+PS C:\Kodlar\backend çalışma\mvc\Store> dotnet add .\Services\ reference .\Entities\
+PS C:\Kodlar\backend çalışma\mvc\Store> dotnet add .\Services\ reference .\Repositories\
+Services projesinde Services.csproj dosyası içerisinde referansların eklendiği belirtilmiş
+
+interface tanımı yapmak için contracts klasörü ekledik 
+ilgili ifadeleri uygulamak adına ProductManager.cs dosyası oluşturduk
+
+RepositoryManager ile tüm Repositoryleri yönetebiliyoruz
+
+ServicesManager yazdıktan sonra configuration işlemi yapmamız lazım IoC ye
+bunun için program cs odak noktası
+ama bunun için ilgili referansı vermemiz lazım
+not: normalde vs de olsa referans vermeye gerek olmayabilir
+PS C:\Kodlar\backend çalışma\mvc\Store> dotnet add .\StoreApp\ reference .\Services\
+
+kayıtlar şuan repo üzerinden geliyor
+
+
+
+
+
+
+
