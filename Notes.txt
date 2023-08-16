@@ -118,4 +118,17 @@ ile database i kontrol ettik.
 IRepositoryBase isimde bir dosya yaptık
 
 
+6.7 ->
+dotnet ef Migrations add Category
+PS C:\Kodlar\backend çalışma\mvc\Store\StoreApp> dotnet ef Migrations add Category
+bu sayede dotnet üzerinde yeni bir migrations oluşacak, Category ile ilgili tanımların veri tabanına yansıması için gerekli
+sciptleri oluşturacak
+bundan önce gerekli tanımlamaları vs yaptık
+
+sonra,
+dotnet ef database update
+komutunu kullanıyoruz
+böylelikle sqlite da yeni bir tablo oluşmuş olacak 
+PS C:\Kodlar\backend çalışma\mvc> sqlite3 ProductDb.db
+sqlite> .tables
 

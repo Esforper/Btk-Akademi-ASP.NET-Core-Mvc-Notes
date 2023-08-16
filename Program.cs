@@ -19,6 +19,9 @@ builder.Services.AddDbContext<RepositoryContext>(Options =>
 
 builder.Services.AddScoped<IRepositoryManager,RepositoryManager>();
 builder.Services.AddScoped<IProductRepository,ProductRepository>();
+builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+//ICategoryRepository ifadesi için CategoryRepository yi tanımlamış olduk
+
 //IRepositoryManager arabirimi ile karşılaşırsa RepositoryManager classını getirecek
 
 var app = builder.Build();
