@@ -165,7 +165,8 @@ partial view modelden bağımsız çalışması gibi
 
 ProductSummary tanımlama sebebimiz ürün sayısını dönebilecek bir yapı
 
-
+9.3 ----
+normalde asıl modeller entities üzerinde ama ayrıca admin üzerinde model tasarımı için ilgili yerde de klasör açılabilir
 
 
 

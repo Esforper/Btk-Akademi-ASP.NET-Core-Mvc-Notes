@@ -39,15 +39,7 @@ app.UseStaticFiles();   //uygulamanın statik dosyalar kullanabileceğini belirt
 //bootstrap , jquery , font-awsome gibi kütüphaneleri indirmemize de yarıyor
 //bunları indirirken libman dan yararlanarak indiriyoruz
 
-app.UseEndpoints(endpoint =>
-{
-    endpoint.MapAreaControllerRoute(
-        name:"Admin",
-        areaName:"Admin",
-        pattern:"Admin/{controller=Dashboard}/{action=Index}/{id?}"
-    );
-    endpoint.MapControllerRoute(name:"default",pattern:"{controller=Home}/{action=Index}/{id?}");
-});
+
 
 app.UseRouting(); //uygulamanın viewse , controllera ihtiyacının yanı sıra bir routinge ihtiyacı var
 app.UseHttpsRedirection();  //Redirectionlar da işletilebilir (ekleyebiliriz) ?
@@ -58,5 +50,14 @@ app.UseHttpsRedirection();  //Redirectionlar da işletilebilir (ekleyebiliriz) ?
    pattern:"{controller=Home}/{action=Index}/{id?}"); şeklinde de tanımlanabilir */
 // * burada tek bir end point tanımı var sadece
 
+app.UseEndpoints(endpoint =>
+{
+    endpoint.MapAreaControllerRoute(
+        name:"Admin",
+        areaName:"Admin",
+        pattern:"Admin/{controller=Dashboard}/{action=Index}/{id?}"
+    );
+    endpoint.MapControllerRoute(name:"default",pattern:"{controller=Home}/{action=Index}/{id?}");
+});
 
 app.Run();
