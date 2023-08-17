@@ -200,3 +200,5 @@ burada asp-route-id kısmı ile , update nin boş tanımlanan kısmı ile Produc
 bu tanımlama ile tam olarak oldu
 
 ?id=1 gibi bir ifade olsaydı buna QueryString 
+
+hiçbir zaman arayüzlerde program detayı yer almaz
