@@ -190,4 +190,13 @@ normalde asıl modeller entities üzerinde ama ayrıca admin üzerinde model tas
 th : table head
 td : table data
 
+*** <a class="btn btn-warning" asp-action="Update" asp-route-id="@prd.ProductId">Edit</a>
+burada asp-route-id kısmı ile , update nin boş tanımlanan kısmı ile Product/1 , Product/2 gibi sayfalar oluşuyor 
 
+ public IActionResult Update([FromRoute(Name ="id")]int id)
+        {
+            return View();
+        }
+bu tanımlama ile tam olarak oldu
+
+?id=1 gibi bir ifade olsaydı buna QueryString 
