@@ -159,6 +159,11 @@ PS C:\Kodlar\backend çalışma\mvc\Store> dotnet add .\StoreApp\ reference .\Se
 
 kayıtlar şuan repo üzerinden geliyor
 
+görünüm birleşeni : ViewComplement
+belirli durumlarda sayfanın belirli kısımları sayfanın kalanından bağımsız çalışması gerekebilir
+partial view modelden bağımsız çalışması gibi
+
+ProductSummary tanımlama sebebimiz ürün sayısını dönebilecek bir yapı
 
 
 
