@@ -4,7 +4,9 @@ using Services.Contracts;
 
 namespace StoreApp.Components
 {
-    public class ProductSummary : ViewComponent
+//  public class ProductSummary : ViewComponent //coding by Conventiona göre bunu bir daha yapmamız lazım
+//  yeniden isimlendirdikten sonra view ifaesi yapmamız lazım
+    public class ProductSummaryViewComponent : ViewComponent
     {
         /*
         //bu bölüm DI çerçevesini destekliyor
@@ -19,7 +21,7 @@ namespace StoreApp.Components
 
         private readonly IServiceManager _manager;
 
-        public ProductSummary(IServiceManager manager)
+        public ProductSummaryViewComponent(IServiceManager manager)
         {
             _manager = manager;
         }
