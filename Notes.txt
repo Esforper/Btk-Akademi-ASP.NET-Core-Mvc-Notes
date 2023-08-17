@@ -168,6 +168,13 @@ ProductSummary tanımlama sebebimiz ürün sayısını dönebilecek bir yapı
 9.3 ----
 normalde asıl modeller entities üzerinde ama ayrıca admin üzerinde model tasarımı için ilgili yerde de klasör açılabilir
 
+@{
+    Layout = "_Layout"; 
+    @* normalde Admin altında bir shared içinde _Layout dosyası oluşturmasaydık
+    bu Layoutu ana layout olarak alacaktı çünkü program admin altında Layout var mı bakıyor
+    olmayınca StoreApp altında bakıp alıyordu
+    ama admin klasörü altında bir shared içinde layout dosyası varsa ilk oradan alacaktır *@
+}
 
 
 

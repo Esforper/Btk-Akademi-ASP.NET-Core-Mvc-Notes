@@ -1,0 +1,11 @@
+@* razorpage başladığı zaman import edilecek , onlar içerisinde kullanılacak dosyalar *@
+@using StoreApp
+@* @using Repositories   bu kısım belki eklenmesi gerekebilir diye kalsın *@
+@* bu direktifler diğer sayfalarda da çalışacak gibi düşünüyoruz
+örneğin  get sayfasında @model StoreApp.Models.Product  yerine @model Product yeterli oluyor.*@
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Entities.Models;
+
+@* bu sayede tag helperleri ekledik hem de navbarı layouta bağlamamıza yardımcı oldu
+? galiba navbarın link yolunu tanımlarken tag helper kullandığımızdan da böyle olmuş olabilir *@
