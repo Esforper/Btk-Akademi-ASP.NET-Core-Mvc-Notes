@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj": {
+    "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj",
+        "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\obj\\",
+        "outputPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -138,14 +138,14 @@
         }
       }
     },
-    "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj": {
+    "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj",
+        "projectUniqueName": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj",
+        "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\obj\\",
+        "outputPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -170,8 +170,8 @@
               "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj": {
                 "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj"
               },
-              "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj": {
-                "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj"
+              "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj": {
+                "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj"
               }
             }
           }
@@ -238,11 +238,11 @@
               "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj": {
                 "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Entities\\Entities.csproj"
               },
-              "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj": {
-                "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj"
+              "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj": {
+                "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Repositories\\Repositories.csproj"
               },
-              "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj": {
-                "projectPath": "C:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj"
+              "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj": {
+                "projectPath": "c:\\Kodlar\\backend çalışma\\mvc\\Store\\Services\\Services.csproj"
               }
             }
           }
