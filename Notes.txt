@@ -176,5 +176,18 @@ normalde asıl modeller entities üzerinde ama ayrıca admin üzerinde model tas
     ama admin klasörü altında bir shared içinde layout dosyası varsa ilk oradan alacaktır *@
 }
 
+<table> 
+        <thead>
+            <tr>
+                <th></th>     burada 4 tane th için th*4 yazıp ctrl space ile bulduk
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+
+th : table head
+td : table data
 
 
