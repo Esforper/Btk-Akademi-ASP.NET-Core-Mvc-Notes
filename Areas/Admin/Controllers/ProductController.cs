@@ -31,7 +31,15 @@ namespace StoreApp.Areas.Admin.Controllers
         //bu noktada buraya bir breakpoint koyularak test etmek en mantıklısı ondan sonra veri tabanına kaydedilebilir
         //bunun için base ye metod yazıcaz
         {
-            return View();
+            if(ModelState.IsValid)
+            {
+            _manager.ProductService.CreateProduct(product);
+            // return View();
+            return RedirectToAction("Index");
+            }
+            return View();  //eğer model durumu uygun değilse kendi üzerine dönmesini sağlıyor
+
+
         }
 
     }
