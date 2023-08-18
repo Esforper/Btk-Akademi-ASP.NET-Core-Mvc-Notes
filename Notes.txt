@@ -202,3 +202,53 @@ bu tanımlama ile tam olarak oldu
 ?id=1 gibi bir ifade olsaydı buna QueryString 
 
 hiçbir zaman arayüzlerde program detayı yer almaz
+
+//10.2 ----
+ önce mevcut database yi fiziksel olarak ortadan kaldırıyoruz
+Store/StoreApp> dotnet ef database drop
+
+migrations klasörünü de silmemiz lazım
+ del .\Migrations\
+
+ Entities altında product içinde categoryId ekliyoruz
+
+Config dosyalarınıı ve RepositoryContext de gerekli düzenlemelerden sonra migration alıyoruz
+\Store\StoreApp> dotnet ef migrations add init
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
