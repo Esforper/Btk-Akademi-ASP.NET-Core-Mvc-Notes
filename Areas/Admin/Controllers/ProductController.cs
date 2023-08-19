@@ -1,5 +1,6 @@
 using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Services.Contracts;
 
 namespace StoreApp.Areas.Admin.Controllers
@@ -22,6 +23,13 @@ namespace StoreApp.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
+            //ViewBag.Categories = _manager.CategoryService.GetAllCategories(false); //IEnumerable formatta kategori nesnesine
+            //erişim yapabiliyoruz , başka bir şekilde tanımlamak istersek (tag helperlar ile de)
+            ViewBag.Categories = new SelectList(_manager.CategoryService.GetAllCategories(false),"CategoryId","CategoryName","1");
+            //burada seçilebilir bir lista tanımı oluşturduk.
+            //veri tabanındaki kayıtları item olarak belirledik
+            //CategoryId alanını id alanı , text alanı olarak CategoryName alanı belirlendi
+            //1 alanı da default olarak seçili olarak gelsin diye yazıldı
             return View();
         }
 

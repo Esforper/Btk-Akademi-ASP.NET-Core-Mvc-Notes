@@ -215,8 +215,15 @@ migrations klasörünü de silmemiz lazım
 Config dosyalarınıı ve RepositoryContext de gerekli düzenlemelerden sonra migration alıyoruz
 \Store\StoreApp> dotnet ef migrations add init
 
+değişiklikleri database üzerinde yansıtmamız gerekiyor
 
+manuel olarak bir category eklemeye çalışırsak :
+insert into Categories(CategoryName) VALUES('SmartPhone');
 
+bir ürün girerken her bilgi aynı anda girilmemesi gerekebilir , bir kısmı bir zaman diğer kısmı başka zaman
+şeklinde bilgi girişi olabilir , bu noktada DTO lar kullanılıyor
+? bilgi taşıma işlemine yarıyor galiba
+DTO : Data Transfer Objects
 
 
 
