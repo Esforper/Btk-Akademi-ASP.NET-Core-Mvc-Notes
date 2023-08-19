@@ -225,9 +225,15 @@ bir ürün girerken her bilgi aynı anda girilmemesi gerekebilir , bir kısmı b
 ? bilgi taşıma işlemine yarıyor galiba
 DTO : Data Transfer Objects
 
+AutoMapper yüklemek için servis yüklemesi yapıcaz
 
+dotnet add .\Services\ package AutoMapper.Extensions.Microsoft.DependencyInjection
+yükledikten sonra Services.csproj içinde paket versiyonu , paketi silme gibi işlemler yapılabilir
 
-
+program.cs e servis kaydını yapmamız lazım
+eklediğimiz Infrastructer klasörü içerisine daha sonra Extensions ekleyeceğiz
+taghelper lerimizi ekleyeceğiz
+yani uygulamaya ilişkin , uygulamaya geneline etki eden şeyler Infrastructer klasörü altında organize edilecek
 
 
 

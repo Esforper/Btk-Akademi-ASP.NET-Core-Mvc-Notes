@@ -24,6 +24,8 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 //ICategoryRepository ifadesi için CategoryRepository yi tanımlamış olduk
 
+builder.Services.AddAutoMapper(typeof(Program));
+
 //IRepositoryManager arabirimi ile karşılaşırsa RepositoryManager classını getirecek
 
 builder.Services.AddScoped<IServiceManager, ServiceManager>();

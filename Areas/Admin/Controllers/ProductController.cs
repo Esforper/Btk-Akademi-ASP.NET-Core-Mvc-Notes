@@ -1,3 +1,4 @@
+using Entities.Dtos;
 using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -35,13 +36,15 @@ namespace StoreApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([FromForm] Product product)
+        public IActionResult Create([FromForm] ProductDtoForInsertion productDto)
         //bu noktada buraya bir breakpoint koyularak test etmek en mantıklısı ondan sonra veri tabanına kaydedilebilir
         //bunun için base ye metod yazıcaz
         {
             if (ModelState.IsValid)
             {
-                _manager.ProductService.CreateProduct(product);
+                _manager.ProductService.CreateProduct(productDto);
+                //tip uyuşmazlığı olduğu için CreateProduct un definitionuna gidip Product u ProductDtoForInsertion
+                //olarak değiştirildi
                 // return View();
                 return RedirectToAction("Index");
             }
